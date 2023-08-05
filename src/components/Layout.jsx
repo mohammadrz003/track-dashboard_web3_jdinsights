@@ -1,10 +1,11 @@
 import Header from "./Header";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
-    <div className="container mx-auto max-w-screen-xl">
+    <>
       <Header />
-    </div>
+      <div className="container mx-auto max-w-screen-md pb-6">{children}</div>
+    </>
   );
 };
 
