@@ -9,10 +9,10 @@ import {
 
 function App() {
   return (
-    <div className="App bg-[#F8F8FC] min-h-screen">
+    <div className="App">
       <Layout>
         {/* Statitstic cards */}
-        <div className="w-full grid grid-cols-3 mt-6 gap-x-6">
+        <div className="w-full grid grid-cols-1 gap-y-5 md:grid-cols-2 lg:grid-cols-3 mt-6 gap-x-6">
           <StatitsticCard
             className="bg-[#1D1F2C]"
             bgImage="/img/ornament1.svg"
@@ -30,7 +30,7 @@ function App() {
             label="+10%"
           />
           <StatitsticCard
-            className="bg-[#3250FF]"
+            className="bg-[#3250FF] md:col-span-2 lg:col-span-1"
             bgImage="/img/ornament3.svg"
             icon={<CreditCardIcon className="text-white w-5 h-5" />}
             number="$651"
@@ -38,8 +38,8 @@ function App() {
             label="+4%"
           />
         </div>
-        <div className="w-full flex justify-end mt-6 gap-x-6">
-          <div className="w-[40%] p-6 rounded-xl bg-white shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]">
+        <div className="w-full flex flex-col gap-y-6 md:flex-row mt-6 gap-x-6">
+          <div className="w-full md:w-1/2 lg:w-[40%] p-6 rounded-xl bg-white shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]">
             <h2 className="text-[#1D1F2C] font-semibold text-xl">Activities</h2>
             <div className="flex justify-between text-[#777980] text-sm font-medium mt-1">
               <span>Last activity:</span>
@@ -87,7 +87,7 @@ function App() {
             </div>
           </div>
 
-          <div className="w-[60%] flex flex-col items-center justify-center mx-auto bg-white rounded-lg shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]">
+          <div className="w-full md:w-1/2 lg:w-[60%] flex flex-col items-center justify-center mx-auto bg-white rounded-lg shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]">
             <ul className="w-full flex flex-col divide-y divide">
               <li className="flex flex-row">
                 <div className="flex items-center flex-1 p-4 cursor-pointer select-none">

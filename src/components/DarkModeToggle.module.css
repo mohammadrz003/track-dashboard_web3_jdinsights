@@ -1,0 +1,48 @@
+.darkModeToggle {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 100%;
+  border: none transparent;
+  position: relative;
+  cursor: pointer;
+}
+
+.crescent {
+  position: absolute;
+  border-radius: 100%;
+  left: 10px;
+  bottom: 10px;
+  width: 1.4rem;
+  height: 1.4rem;
+  transform: scale(1);
+  transition: transform 0.5s, background-color 0.5s;
+}
+
+.darkModeToggle:focus {
+  outline: 0;
+}
+
+.sun {
+  background: #003c85;
+}
+
+.sun .crescent {
+  transform: scale(1);
+  background: #fff;
+}
+
+.sun:focus {
+  background: #2d2d2d;
+}
+
+.moon {
+  background: #88a7d1;
+}
+.moon .crescent {
+  transform: scale(0);
+  background: #111;
+}
+
+.moon:focus {
+  background: #afafaf;
+}

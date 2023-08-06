@@ -1,7 +1,9 @@
-const Header = () => {
+import DarkModeToggle from "./DarkModeToggle";
+
+const Header = ({ isDark, setIsDark }) => {
   return (
-    <section className="shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]">
-      <div className="navbar bg-base-100 container max-w-screen-xl mx-auto">
+    <section className="shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] z-10 relative">
+      <div className="navbar container max-w-screen-xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -40,6 +42,11 @@ const Header = () => {
           <a className="btn btn-ghost normal-case text-xl">JDInSights</a>
         </div>
         <div className="navbar-end">
+          <DarkModeToggle
+            isDark={isDark}
+            onClickMethod={setIsDark}
+            setIsDark={setIsDark}
+          />
           <button className="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
