@@ -2,7 +2,7 @@ import { useState } from "react";
 import { coins } from "../constants";
 import DarkModeToggle from "./DarkModeToggle";
 import { CheckIcon } from "@heroicons/react/24/solid";
-import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 
 const Header = ({ isDark, setIsDark, protocolName, setProtocolName }) => {
   const navigate = useNavigate()
@@ -40,7 +40,7 @@ const Header = ({ isDark, setIsDark, protocolName, setProtocolName }) => {
           <button>close</button>
         </form>
       </dialog>
-      <section className="shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] z-20 relative">
+      <section className="shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] z-20 relative dark:shadow-none dark:border-b dark:border-b-slate-700">
         <div className="navbar container max-w-screen-xl mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
@@ -92,7 +92,7 @@ const Header = ({ isDark, setIsDark, protocolName, setProtocolName }) => {
             </div>
           </div>
           <div className="navbar-center">
-            <a className=" text-xl text-black dark:text-white">JDInSights</a>
+            <Link to="/" className=" text-xl text-black dark:text-white">JDInSights</Link>
           </div>
           <div className="navbar-end">
             <DarkModeToggle

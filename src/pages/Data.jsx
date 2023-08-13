@@ -10,7 +10,7 @@ import Tokens from "../components/Tokens";
 import Protocols from "../components/Protocols";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
-const Data = () => {
+const Data = ({ isDark, setIsDark }) => {
     const [searchParams] = useSearchParams();
     const searchParamValues = Object.fromEntries([...searchParams]);
     const navigate = useNavigate()
@@ -51,7 +51,7 @@ const Data = () => {
     ]);
 
     return (
-        <Layout protocolName={protocolName} setProtocolName={setProtocolName}>
+        <Layout protocolName={protocolName} setProtocolName={setProtocolName} isDark={isDark} setIsDark={setIsDark}>
             {protocolDataIsLoading || !isDataSet ? (
                 <HomePageLoading />
             ) : protocolDataError ? (

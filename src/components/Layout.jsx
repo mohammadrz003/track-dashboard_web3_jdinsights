@@ -1,10 +1,8 @@
 import Header from "./Header";
-import { useState } from "react";
-import { getInitialTheme } from "../utils/fileManager.utils";
 import GrowingCircleAnimation from "./GrowingCircleAnimation";
 
-const Layout = ({ children, protocolName, setProtocolName }) => {
-  const [isDark, setIsDark] = useState(getInitialTheme());
+const Layout = ({ children, protocolName, setProtocolName, isDark, setIsDark }) => {
+
 
   return (
     <>
