@@ -55,8 +55,8 @@ const Data = () => {
             {protocolDataIsLoading || !isDataSet ? (
                 <HomePageLoading />
             ) : protocolDataError ? (
-                <div>
-
+                <div className="mx-auto flex justify-center items-center flex-col">
+                    <img src="https://moonfo-files.storage.iran.liara.space/jsinsights/logos/sad-etherium.gif" alt="sad ether" className="w-56 h-56 transform translate-y-12" />
                     <p className="text-center text-red-500">Something went wrong</p>
                 </div>
             ) : (
