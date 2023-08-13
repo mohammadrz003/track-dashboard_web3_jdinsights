@@ -61,7 +61,6 @@ const matchProtocols = ({ data, protocolName }) => {
       const protocols = [];
 
       for (let [key, value] of Object.entries(data.Protocols)) {
-        console.log(key, value);
         protocols.push({
           name: key,
           volume: value?.Volume,

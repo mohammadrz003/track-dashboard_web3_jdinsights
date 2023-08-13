@@ -2,10 +2,13 @@ import { Link, createSearchParams, useNavigate } from "react-router-dom"
 import DarkModeToggle from "../components/DarkModeToggle"
 import GrowingCircleAnimation from "../components/GrowingCircleAnimation"
 import { useState } from "react"
+import { coins } from "../constants"
+import { CheckIcon } from "@heroicons/react/24/solid"
 
 const Search = ({ isDark, setIsDark }) => {
-    const [address, setAddress] = useState("");
     const navigate = useNavigate()
+    const [address, setAddress] = useState("");
+    const [protocolName, setProtocolName] = useState("zkevm")
 
     const onAddressChage = (e) => {
         setAddress(e.target.value)
@@ -20,10 +23,14 @@ const Search = ({ isDark, setIsDark }) => {
             address,
         };
         const options = {
-            pathname: `/zkevm`,
+            pathname: `/${protocolName}`,
             search: `?${createSearchParams(params)}`,
         };
         navigate(options, { replace: false });
+    }
+
+    const selectProtocolHandler = (name) => {
+        setProtocolName(name)
     }
 
     return (
@@ -32,6 +39,55 @@ const Search = ({ isDark, setIsDark }) => {
             <section className="shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] dark:shadow-none dark:border-b dark:border-b-slate-700 z-20 relative">
                 <div className="navbar container max-w-screen-xl mx-auto">
                     <div className="navbar-start">
+                        <div className="dropdown">
+                            <label
+                                tabIndex={0}
+                                className="btn bg-transparent px-2 dark:border-slate-800 dark:text-white dark:hover:bg-slate-700"
+                            >
+                                {protocolName === "zkevm" ? (
+                                    <div className="flex items-center gap-x-2.5">
+                                        <img
+                                            src="https://moonfo-files.storage.iran.liara.space/jsinsights/logos/polygon-zkevm-logo.png"
+                                            alt="zkevm"
+                                            className="w-9 h-9"
+                                        />
+                                        <span>Zkevm</span>
+                                    </div>
+                                ) : (
+                                    <div className="flex items-center gap-x-2.5">
+                                        <img
+                                            src="https://moonfo-files.storage.iran.liara.space/jsinsights/logos/base.png"
+                                            alt="base"
+                                            className="w-9 h-9"
+                                        />
+                                        <span>Base</span>
+                                    </div>
+                                )}
+                            </label>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 dark:bg-slate-800 relative dark:text-slate-200"
+                            >
+                                {coins.map((item) => (
+                                    <li
+                                        key={item.name}
+                                        onClick={() => selectProtocolHandler(item.name)}
+                                    >
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-x-2.5">
+                                                <img src={item.img} alt={item.name} className="w-9 h-9" />
+                                                <span className="capitalize">{item.name}</span>
+                                            </div>
+                                            {item.name === protocolName && (
+                                                <CheckIcon className="w-5 h-5 fill-green-500" />
+                                            )}
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="navbar-center">
                         <Link to="/" className="pl-3 text-xl text-black dark:text-white">JDInSights</Link>
                     </div>
                     <div className="navbar-end">
