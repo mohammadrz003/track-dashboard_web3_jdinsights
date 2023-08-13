@@ -106,7 +106,7 @@ const Search = ({ isDark, setIsDark }) => {
                         <h1 className="text-2xl sm:text-4xl mb-4 text-gray-900 dark:text-slate-200 dark:font-normal">Enter you wallet address to track your address and see how many volume you did on either Zkevm or Base</h1>
                         <div className="flex w-full justify-center items-end mt-2">
                             <div className="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
-                                <input value={address} onChange={onAddressChage} type="text" placeholder="Search Address" id="hero-field" name="hero-field" className="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:border-slate-600 dark:bg-slate-700" />
+                                <input value={address} onChange={onAddressChage} type="text" placeholder="Search Address" id="hero-field" name="hero-field" className="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:border-slate-600 dark:bg-slate-700 dark:text-slate-200" />
                             </div>
                             <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={searchHandler}>Search</button>
                         </div>
