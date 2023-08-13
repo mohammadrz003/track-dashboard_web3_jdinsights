@@ -38,7 +38,6 @@ const Data = ({ isDark, setIsDark }) => {
         }
         if (!protocolDataIsLoading && !protocolDataError) {
             setData(matchProtocols({ data: protocolData?.data, protocolName }));
-            console.log(matchProtocols({ data: protocolData?.data, protocolName }))
             setIsDataSet(true);
         }
     }, [
