@@ -1,9 +1,8 @@
 import Header from "./Header";
-import GrowingCircleAnimation from "./GrowingCircleAnimation";
 import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useState } from "react";
 
-const Layout = ({ children, protocolName, setProtocolName, isDark, setIsDark }) => {
+const Layout = ({ children, protocolName, setProtocolName }) => {
   const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams();
   const searchParamValues = Object.fromEntries([...searchParams]);
@@ -28,10 +27,7 @@ const Layout = ({ children, protocolName, setProtocolName, isDark, setIsDark }) 
 
   return (
     <>
-      <GrowingCircleAnimation isDark={isDark} />
       <Header
-        isDark={isDark}
-        setIsDark={setIsDark}
         protocolName={protocolName}
         setProtocolName={setProtocolName}
         address={address}

@@ -3,7 +3,7 @@ import storage from "local-storage-fallback";
 import { useDispatch } from "react-redux";
 import { changeTheme } from "../store/actions/theme";
 
-const onClickWrapper = (onClickMethod, isDark, event, callback) => {
+const onClickWrapper = (isDark, event, callback) => {
   // when mobile device is zoomed in using the pinch gesture, we need to get the relative
   // coordinate on the page.
   // https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-
@@ -28,13 +28,12 @@ const onClickWrapper = (onClickMethod, isDark, event, callback) => {
   const darkModeToggleEvent = new CustomEvent("darkModeToggle", {
     detail: customEventState,
   });
-  onClickMethod(isDark);
   storage.setItem("theme", isDark.toString());
   callback();
   dispatchEvent(darkModeToggleEvent);
 };
 
-const DarkModeToggle = ({ isDark, onClickMethod }) => {
+const DarkModeToggle = ({ isDark }) => {
   const dispatch = useDispatch();
 
   function dispatchTheme() {
@@ -49,7 +48,7 @@ const DarkModeToggle = ({ isDark, onClickMethod }) => {
           type="checkbox"
           checked={!isDark ? false : true}
           onChange={(event) =>
-            onClickWrapper(onClickMethod, !isDark, event, () => {
+            onClickWrapper(!isDark, event, () => {
               dispatchTheme();
             })
           }
@@ -79,7 +78,6 @@ const DarkModeToggle = ({ isDark, onClickMethod }) => {
 
 DarkModeToggle.propTypes = {
   isDark: PropTypes.bool.isRequired,
-  onClickMethod: PropTypes.func.isRequired,
 };
 
 export default DarkModeToggle;

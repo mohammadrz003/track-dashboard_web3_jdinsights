@@ -30,8 +30,8 @@ const matchProtocols = ({ data, protocolName }) => {
           last_week: data?.Interactions?.lastWeek || 0,
         },
         volume: {
-          total_volume: data?.Volume?.total_volume || 0,
-          last_week_volume: data?.Volume?.last_week_volume || 0,
+          total_volume: data?.Volume?.total || 0,
+          last_week_volume: data?.Volume?.last_week || 0,
         },
         fee: {
           total_fee: data?.Fees?.total_fee || 0,
@@ -77,8 +77,8 @@ const matchProtocols = ({ data, protocolName }) => {
           last_week: data?.Interactions?.lastWeek || 0,
         },
         volume: {
-          total_volume: data?.Volume?.total_volume || 0,
-          last_week_volume: data?.Volume?.last_week_volume || 0,
+          total_volume: data?.Volume?.total || 0,
+          last_week_volume: data?.Volume?.last_week || 0,
         },
         fee: {
           total_fee: data?.Fees?.total_fee || 0,

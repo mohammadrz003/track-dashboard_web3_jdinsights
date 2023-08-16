@@ -10,7 +10,7 @@ import Tokens from "../components/Tokens";
 import Protocols from "../components/Protocols";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
-const Data = ({ isDark, setIsDark }) => {
+const Data = () => {
     const [searchParams] = useSearchParams();
     const searchParamValues = Object.fromEntries([...searchParams]);
     const navigate = useNavigate()
@@ -32,6 +32,8 @@ const Data = ({ isDark, setIsDark }) => {
         queryKey: [protocolName, address],
     });
 
+    console.log(protocolData)
+
     useEffect(() => {
         if (plName !== "base" && plName !== "zkevm") {
             navigate("/");
@@ -50,7 +52,7 @@ const Data = ({ isDark, setIsDark }) => {
     ]);
 
     return (
-        <Layout protocolName={protocolName} setProtocolName={setProtocolName} isDark={isDark} setIsDark={setIsDark}>
+        <Layout protocolName={protocolName} setProtocolName={setProtocolName}>
             {protocolDataIsLoading || !isDataSet ? (
                 <HomePageLoading />
             ) : protocolDataError ? (

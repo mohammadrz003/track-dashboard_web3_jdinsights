@@ -2,12 +2,15 @@ import { coins } from "../constants";
 import DarkModeToggle from "./DarkModeToggle";
 import { CheckIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
+import GrowingCircleAnimation from "./GrowingCircleAnimation";
+import { useSelector } from "react-redux";
 
-const Header = ({ isDark, setIsDark, protocolName, isSearchHidden, selectProtocolHandler, searchHandler, address, setAddress }) => {
-
+const Header = ({ protocolName, isSearchHidden, selectProtocolHandler, searchHandler, address, setAddress }) => {
+  const { value: isDark } = useSelector((state) => state.theme);
 
   return (
     <>
+      <GrowingCircleAnimation isDark={isDark} />
       {!isSearchHidden && <dialog id="searchbar_modal" className="modal">
         <form method="dialog" className="modal-box dark:bg-slate-800">
           <h3 className="font-semibold text-lg mb-5 dark:text-slate-100">Enter your address to track your wallet</h3>
@@ -78,8 +81,6 @@ const Header = ({ isDark, setIsDark, protocolName, isSearchHidden, selectProtoco
           <div className="navbar-end">
             <DarkModeToggle
               isDark={isDark}
-              onClickMethod={setIsDark}
-              setIsDark={setIsDark}
             />
             {!isSearchHidden && <button className="btn btn-ghost btn-circle" onClick={() => window.searchbar_modal.showModal()}>
               <svg
