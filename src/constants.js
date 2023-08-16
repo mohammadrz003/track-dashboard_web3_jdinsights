@@ -1,10 +1,10 @@
 export const coins = [
   {
     name: "base",
-    img: "https://moonfo-files.storage.iran.liara.space/jsinsights/logos/base.png",
+    img: "https://files.moonfo.com/jdinsights/base.png",
   },
   {
     name: "zkevm",
-    img: "https://moonfo-files.storage.iran.liara.space/jsinsights/logos/polygon-zkevm-logo.png",
+    img: "https://files.moonfo.com/jdinsights/polygon-zkevm-logo.png",
   },
 ];

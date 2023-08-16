@@ -51,7 +51,7 @@ const Header = ({ isDark, setIsDark, protocolName, setProtocolName }) => {
                 {protocolName === "zkevm" ? (
                   <div className="flex items-center gap-x-2.5">
                     <img
-                      src="https://moonfo-files.storage.iran.liara.space/jsinsights/logos/polygon-zkevm-logo.png"
+                      src="https://files.moonfo.com/jdinsights/polygon-zkevm-logo.png"
                       alt="zkevm"
                       className="w-9 h-9"
                     />
@@ -60,7 +60,7 @@ const Header = ({ isDark, setIsDark, protocolName, setProtocolName }) => {
                 ) : (
                   <div className="flex items-center gap-x-2.5">
                     <img
-                      src="https://moonfo-files.storage.iran.liara.space/jsinsights/logos/base.png"
+                      src="https://files.moonfo.com/jdinsights/base.png"
                       alt="base"
                       className="w-9 h-9"
                     />

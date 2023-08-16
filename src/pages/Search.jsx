@@ -47,7 +47,7 @@ const Search = ({ isDark, setIsDark }) => {
                                 {protocolName === "zkevm" ? (
                                     <div className="flex items-center gap-x-2.5">
                                         <img
-                                            src="https://moonfo-files.storage.iran.liara.space/jsinsights/logos/polygon-zkevm-logo.png"
+                                            src="https://files.moonfo.com/jdinsights/polygon-zkevm-logo.png"
                                             alt="zkevm"
                                             className="w-9 h-9"
                                         />
@@ -56,7 +56,7 @@ const Search = ({ isDark, setIsDark }) => {
                                 ) : (
                                     <div className="flex items-center gap-x-2.5">
                                         <img
-                                            src="https://moonfo-files.storage.iran.liara.space/jsinsights/logos/base.png"
+                                            src="https://files.moonfo.com/jdinsights/base.png"
                                             alt="base"
                                             className="w-9 h-9"
                                         />
@@ -101,7 +101,7 @@ const Search = ({ isDark, setIsDark }) => {
             </section>
             <section className="text-gray-600 body-font relative z-10">
                 <div className="container mx-auto flex flex-col px-5 pb-5 pt-7 min-h-[calc(100vh-64px)] justify-center items-center">
-                    <img className="mb-10 object-cover object-center rounded w-20 h-auto" alt="hero" src="https://moonfo-files.storage.iran.liara.space/jsinsights/logos/happy-etherium.gif" />
+                    <img className="mb-10 object-cover object-center rounded w-20 h-auto" alt="hero" src="https://files.moonfo.com/jdinsights/happy-etherium.gif" />
                     <div className="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
                         <h1 className="text-2xl sm:text-4xl mb-4 text-gray-900 dark:text-slate-200 dark:font-normal">Enter you wallet address to track your address and see how many volume you did on either Zkevm or Base</h1>
                         <div className="flex w-full justify-center items-end mt-2">

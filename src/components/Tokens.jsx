@@ -17,7 +17,7 @@ const Tokens = ({ data }) => {
                   <a href="#" className="relative block">
                     <img
                       alt="profil"
-                      src={item.image_url ? item.image_url : "https://moonfo-files.storage.iran.liara.space/jsinsights/logos/Blue_question_mark_icon.svg.png"}
+                      src={item.image_url ? item.image_url : "https://files.moonfo.com/jdinsights/Blue_question_mark_icon.svg.png"}
                       className="mx-auto object-cover rounded-full h-10 w-10 "
                     />
                   </a>
