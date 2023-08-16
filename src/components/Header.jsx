@@ -1,34 +1,14 @@
-import { useState } from "react";
 import { coins } from "../constants";
 import DarkModeToggle from "./DarkModeToggle";
 import { CheckIcon } from "@heroicons/react/24/solid";
-import { Link, createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Header = ({ isDark, setIsDark, protocolName, setProtocolName }) => {
-  const navigate = useNavigate()
-  const [searchParams, setSearchParams] = useSearchParams();
-  const searchParamValues = Object.fromEntries([...searchParams]);
-  const [address, setAddress] = useState("")
+const Header = ({ isDark, setIsDark, protocolName, isSearchHidden, selectProtocolHandler, searchHandler, address, setAddress }) => {
 
-  const selectProtocolHandler = (name) => {
-    setProtocolName(name);
-    const params = {
-      address: searchParamValues?.address,
-    };
-    const options = {
-      pathname: `/${name}`,
-      search: `?${createSearchParams(params)}`,
-    };
-    navigate(options, { replace: true });
-  };
-
-  const searchHandler = () => {
-    setSearchParams({ 'address': address })
-  }
 
   return (
     <>
-      <dialog id="searchbar_modal" className="modal">
+      {!isSearchHidden && <dialog id="searchbar_modal" className="modal">
         <form method="dialog" className="modal-box dark:bg-slate-800">
           <h3 className="font-semibold text-lg mb-5 dark:text-slate-100">Enter your address to track your wallet</h3>
           <div className="join w-full">
@@ -39,7 +19,8 @@ const Header = ({ isDark, setIsDark, protocolName, setProtocolName }) => {
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
         </form>
-      </dialog>
+      </dialog>}
+
       <section className="shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] z-20 relative dark:shadow-none dark:border-b dark:border-b-slate-700">
         <div className="navbar container max-w-screen-xl mx-auto">
           <div className="navbar-start">
@@ -100,7 +81,7 @@ const Header = ({ isDark, setIsDark, protocolName, setProtocolName }) => {
               onClickMethod={setIsDark}
               setIsDark={setIsDark}
             />
-            <button className="btn btn-ghost btn-circle" onClick={() => window.searchbar_modal.showModal()}>
+            {!isSearchHidden && <button className="btn btn-ghost btn-circle" onClick={() => window.searchbar_modal.showModal()}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 dark:text-slate-200"
@@ -115,7 +96,7 @@ const Header = ({ isDark, setIsDark, protocolName, setProtocolName }) => {
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                 />
               </svg>
-            </button>
+            </button>}
           </div>
         </div>
       </section>
